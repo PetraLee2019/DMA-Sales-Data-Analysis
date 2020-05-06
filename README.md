@@ -4,8 +4,7 @@ The purpose of this exercise is to show performance by designated market area - 
 
 ### Technology Stack 
 - Python, Pandas, SQLite, SQLAlchemy 
-
-Questions 
+### Questions:
 1. What’s the total sales amount by designated market area (DMA)? List the name (not the id) and total sales amount for each DMA.
 
 2. Average Order Value (AOV) is defined as sales.amount divided by transactions.transaction_count. List the name (not the id) and average order value for each DMA on January 1st, 2019. Order the result set from highest average order value to lowest.
@@ -16,8 +15,7 @@ Questions
 ### Process:
 ![alt tag](https://github.com/PetraLee2019/DMA-Sales-Data-Analysis/blob/master/DMA%20Analysis%20using%20Python%2C%20SQLite%2C%20and%20SQLAlchemy.png)
 
-
-
+#### Analysis: 
 1. What’s the total sales amount by designated market area (DMA)? List the name (not the id) and total sales amount for each DMA.
 
 - select name,sum(amount) as total from dmas inner join sales on dmas.id = sales.dma_id group by name order by sum(amount)
@@ -40,8 +38,7 @@ where t.date = '2019-01-01'
 group by  b.name,sum_amount/transaction_count
 order by sum_amount/transaction_count desc
 
-
-3.For each DMA, calculate the average, lowest, and highest sales.amount for the month of January 2019. 
+3. For each DMA, calculate the average, lowest, and highest sales.amount for the month of January 2019. 
 List the name (not the id), average sales amount, minimum sales amount, and maximum sales amount for each DMA.
 
 - select name, avg(amount),min(amount),max(amount)
@@ -50,7 +47,6 @@ join dmas d
 	on d.id = s.dma_id
 where date < '2019-02-01' --month of January 2019. 
 group by name
-
 
 4. Seems like something may be wrong with the data in our visits table. 
 For the month of February 2019, list the name (not the id) and the frequency (count of occurrences where the condition is true)
