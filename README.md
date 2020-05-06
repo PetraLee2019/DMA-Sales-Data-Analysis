@@ -1,7 +1,7 @@
 # DMA-Sales-Data-Analysis
 
-# The purpose of this exercise is to show performance by designated market area - commonly referred to as DMA
-Overview
+### The purpose of this exercise is to show performance by designated market area - commonly referred to as DMA
+#### Overview
 The sales_archive.db contains four tables: dmas, sales, transactions, visits. The purpose of this exercise is to show performance by designated market area 
 
 Questions 
@@ -13,9 +13,8 @@ Questions
 
 4. Seems like something may be wrong with the data in our visits table. For the month of February 2019, list the name (not the id) and the frequency (count of occurrences where the condition is true) where a DMA’s visit count is greater than the transaction count. Order by the DMA name.
 
-
+![alt tag](file:///C:/Users/petra/Downloads/DMA%20Analysis%20using%20Python,%20SQLite,%20and%20SQLAlchemy.html)
 1. What’s the total sales amount by designated market area (DMA)? List the name (not the id) and total sales amount for each DMA.
-
 
 select name,sum(amount) as total from dmas inner join sales on dmas.id = sales.dma_id group by name order by sum(amount)
  
