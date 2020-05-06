@@ -13,7 +13,7 @@ Questions
 
 4. Seems like something may be wrong with the data in our visits table. For the month of February 2019, list the name (not the id) and the frequency (count of occurrences where the condition is true) where a DMA’s visit count is greater than the transaction count. Order by the DMA name.
 
-![alt tag](file:///C:/Users/petra/Downloads/DMA%20Analysis%20using%20Python,%20SQLite,%20and%20SQLAlchemy.html)
+![alt tag](https://github.com/PetraLee2019/DMA-Sales-Data-Analysis/blob/master/DMA%20Analysis%20using%20Python%2C%20SQLite%2C%20and%20SQLAlchemy.png)
 1. What’s the total sales amount by designated market area (DMA)? List the name (not the id) and total sales amount for each DMA.
 
 select name,sum(amount) as total from dmas inner join sales on dmas.id = sales.dma_id group by name order by sum(amount)
